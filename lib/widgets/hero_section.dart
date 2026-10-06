@@ -12,7 +12,11 @@ import 'package:semsufoco/widgets/mockups/finance_cards.dart';
 import 'package:semsufoco/widgets/mockups/phone_mockup.dart';
 
 class HeroSection extends StatelessWidget {
-  const HeroSection({super.key, required this.onStart, required this.onHowItWorks});
+  const HeroSection({
+    super.key,
+    required this.onStart,
+    required this.onHowItWorks,
+  });
 
   final VoidCallback onStart;
   final VoidCallback onHowItWorks;
@@ -30,12 +34,17 @@ class HeroSection extends StatelessWidget {
                 positionedGlow(1018, 411, 620, gradient: AppColors.glow),
                 _ring(1018, 401, 300, AppColors.heroRingInner),
                 _ring(1018, 401, 420, AppColors.heroRingOuter),
-                for (final (x, y, r) in _dots) cCircle(x, y, r, color: AppColors.heroDot),
+                for (final (x, y, r) in _dots)
+                  cCircle(x, y, r, color: AppColors.heroDot),
                 Positioned(
                   left: 0,
                   top: 61,
                   width: 640,
-                  child: _HeroCopy(size: size, onStart: onStart, onHowItWorks: onHowItWorks),
+                  child: _HeroCopy(
+                    size: size,
+                    onStart: onStart,
+                    onHowItWorks: onHowItWorks,
+                  ),
                 ),
                 const Positioned(
                   left: 530,
@@ -51,7 +60,11 @@ class HeroSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _HeroCopy(size: size, onStart: onStart, onHowItWorks: onHowItWorks),
+              _HeroCopy(
+                size: size,
+                onStart: onStart,
+                onHowItWorks: onHowItWorks,
+              ),
               const SizedBox(height: 40),
               Stack(
                 clipBehavior: Clip.none,
@@ -60,7 +73,10 @@ class HeroSection extends StatelessWidget {
                     child: OverflowBox(
                       maxWidth: width * 1.6,
                       maxHeight: width * 1.6,
-                      child: RadialGlow(radius: width * 0.8, gradient: AppColors.glow),
+                      child: RadialGlow(
+                        radius: width * 0.8,
+                        gradient: AppColors.glow,
+                      ),
                     ),
                   ),
                   ScaledBox(
@@ -103,7 +119,11 @@ class HeroSection extends StatelessWidget {
 }
 
 class _HeroCopy extends StatelessWidget {
-  const _HeroCopy({required this.size, required this.onStart, required this.onHowItWorks});
+  const _HeroCopy({
+    required this.size,
+    required this.onStart,
+    required this.onHowItWorks,
+  });
 
   final ScreenSize size;
   final VoidCallback onStart;
@@ -132,7 +152,10 @@ class _HeroCopy extends StatelessWidget {
             ),
             children: const [
               TextSpan(text: 'Sua grana em ordem,\n'),
-              TextSpan(text: 'sem sufoco', style: TextStyle(color: AppColors.mint)),
+              TextSpan(
+                text: 'sem sufoco',
+                style: TextStyle(color: AppColors.mint),
+              ),
               TextSpan(text: '\nno fim do mês.'),
             ],
           ),
@@ -154,8 +177,15 @@ class _HeroCopy extends StatelessWidget {
           spacing: 16,
           runSpacing: 12,
           children: [
-            GradientButton(label: 'Começar agora', onPressed: onStart, trailingArrow: true),
-            SecondaryButton(label: 'Ver como funciona', onPressed: onHowItWorks),
+            GradientButton(
+              label: 'Começar agora',
+              onPressed: onStart,
+              trailingArrow: true,
+            ),
+            SecondaryButton(
+              label: 'Ver como funciona',
+              onPressed: onHowItWorks,
+            ),
           ],
         ),
         SizedBox(height: wide ? 47 : 32),
@@ -215,11 +245,34 @@ class HeroVisual extends StatelessWidget {
           Positioned(
             left: 310,
             top: 18,
-            child: FloatingCard(degrees: -3, child: PhoneMockup(screen: PhoneHomeScreen())),
+            child: FloatingCard(
+              degrees: -3,
+              child: PhoneMockup(screen: PhoneHomeScreen()),
+            ),
           ),
-          Positioned(left: 66, top: 430, child: FloatingCard(degrees: -4, child: GoalMiniCard())),
-          Positioned(left: 12, top: 608, child: FloatingCard(degrees: 4, child: ExpenseToastCard())),
-          Positioned(left: 130, top: 40, child: FloatingCard(degrees: -5, child: TrendChip())),
+          Positioned(
+            left: 66,
+            top: 430,
+            child: FloatingCard(
+              degrees: -4,
+              parallax: 40,
+              child: GoalMiniCard(),
+            ),
+          ),
+          Positioned(
+            left: 12,
+            top: 608,
+            child: FloatingCard(
+              degrees: 4,
+              parallax: -30,
+              child: ExpenseToastCard(),
+            ),
+          ),
+          Positioned(
+            left: 130,
+            top: 40,
+            child: FloatingCard(degrees: -5, parallax: 50, child: TrendChip()),
+          ),
         ],
       ),
     );

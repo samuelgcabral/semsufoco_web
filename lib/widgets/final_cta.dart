@@ -69,8 +69,24 @@ class FinalCta extends StatelessWidget {
                           color: AppColors.ctaNote,
                           anchor: Anchor.middle,
                         ),
-                        cAt(50, 252, const FloatingCard(degrees: -4, child: GoalMiniCard())),
-                        cAt(830, 280, const FloatingCard(degrees: 3, child: ExpenseToastCard())),
+                        cAt(
+                          50,
+                          252,
+                          const FloatingCard(
+                            degrees: -4,
+                            parallax: 30,
+                            child: GoalMiniCard(),
+                          ),
+                        ),
+                        cAt(
+                          830,
+                          280,
+                          const FloatingCard(
+                            degrees: 3,
+                            parallax: -30,
+                            child: ExpenseToastCard(),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -84,7 +100,10 @@ class FinalCta extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 48),
           child: _Panel(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mobile ? 24 : 48, vertical: 56),
+              padding: EdgeInsets.symmetric(
+                horizontal: mobile ? 24 : 48,
+                vertical: 56,
+              ),
               child: Column(
                 children: [
                   Text(
@@ -154,7 +173,9 @@ class _Panel extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: AppColors.ctaPanel,
               borderRadius: _radius,
-              border: Border.fromBorderSide(BorderSide(color: AppColors.ctaPanelBorder)),
+              border: Border.fromBorderSide(
+                BorderSide(color: AppColors.ctaPanelBorder),
+              ),
             ),
           ),
         ),
@@ -167,16 +188,29 @@ class _Panel extends StatelessWidget {
                 Positioned(
                   right: -220,
                   top: -300,
-                  child: const RadialGlow(radius: 360, gradient: AppColors.glow),
+                  child: const RadialGlow(
+                    radius: 360,
+                    gradient: AppColors.glow,
+                  ),
                 ),
-                const Positioned(right: 200, top: 150, child: _DecorPill(height: 130)),
-                const Positioned(right: 120, top: 70, child: _DecorPill(height: 210)),
+                const Positioned(
+                  right: 200,
+                  top: 150,
+                  child: _DecorPill(height: 130),
+                ),
+                const Positioned(
+                  right: 120,
+                  top: 70,
+                  child: _DecorPill(height: 210),
+                ),
               ],
             ),
           ),
         ),
         const Positioned.fill(
-          child: IgnorePointer(child: CustomPaint(painter: _GradientBorderPainter())),
+          child: IgnorePointer(
+            child: CustomPaint(painter: _GradientBorderPainter()),
+          ),
         ),
         child,
       ],
@@ -210,7 +244,10 @@ class _GradientBorderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
-    final rrect = RRect.fromRectAndRadius(rect.deflate(0.5), const Radius.circular(39.5));
+    final rrect = RRect.fromRectAndRadius(
+      rect.deflate(0.5),
+      const Radius.circular(39.5),
+    );
     canvas.drawRRect(
       rrect,
       Paint()

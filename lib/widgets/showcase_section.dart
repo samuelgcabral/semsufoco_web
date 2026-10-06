@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
+import 'package:semsufoco/widgets/common/parallax.dart';
 import 'package:semsufoco/widgets/common/reveal_on_scroll.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
@@ -82,11 +83,23 @@ class ShowcaseVisual extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Positioned(left: 0, top: 19, child: DesktopMockup()),
-          Positioned(left: 210, top: 0, child: PillLabel.callout(text: 'Seu saldo sempre à vista')),
+          Positioned(
+            left: 210,
+            top: 0,
+            child: Parallax(
+              offset: 30,
+              child: PillLabel.callout(text: 'Seu saldo sempre à vista'),
+            ),
+          ),
           Positioned(
             left: 690,
             top: 604,
-            child: PillLabel.callout(text: 'Atalhos para o que você mais faz'),
+            child: Parallax(
+              offset: -30,
+              child: PillLabel.callout(
+                text: 'Atalhos para o que você mais faz',
+              ),
+            ),
           ),
         ],
       ),

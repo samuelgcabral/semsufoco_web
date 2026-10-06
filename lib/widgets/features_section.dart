@@ -135,6 +135,7 @@ class CategoriesVisual extends StatelessWidget {
             top: 54,
             child: FloatingCard(
               degrees: -5,
+              parallax: 40,
               child: TransactionFloatCard(
                 icon: AppIcons.briefcase,
                 title: 'Salário',
@@ -149,6 +150,7 @@ class CategoriesVisual extends StatelessWidget {
             top: 488,
             child: FloatingCard(
               degrees: 5,
+              parallax: -40,
               child: TransactionFloatCard(
                 icon: AppIcons.car,
                 title: 'Posto de combustível',
@@ -181,12 +183,20 @@ class GoalsVisual extends StatelessWidget {
           const Positioned(
             left: 260,
             top: 420,
-            child: FloatingCard(degrees: 3, child: FutureBalanceCard()),
+            child: FloatingCard(
+              degrees: 3,
+              parallax: -40,
+              child: FutureBalanceCard(),
+            ),
           ),
           const Positioned(
             left: 316,
             top: 20,
-            child: FloatingCard(degrees: 4, child: MonthlyReportCard()),
+            child: FloatingCard(
+              degrees: 4,
+              parallax: 40,
+              child: MonthlyReportCard(),
+            ),
           ),
         ],
       ),

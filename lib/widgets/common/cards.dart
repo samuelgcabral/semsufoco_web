@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 import 'package:semsufoco/widgets/common/app_icons.dart';
+import 'package:semsufoco/widgets/common/parallax.dart';
 
 class GlassCard extends StatelessWidget {
   const GlassCard({
@@ -49,14 +50,25 @@ class GlassCard extends StatelessWidget {
 
 /// Rotates its child around its center by [degrees].
 class FloatingCard extends StatelessWidget {
-  const FloatingCard({super.key, required this.degrees, required this.child});
+  const FloatingCard({
+    super.key,
+    required this.degrees,
+    required this.child,
+    this.parallax = 0,
+  });
 
   final double degrees;
   final Widget child;
+  final double parallax;
 
   @override
   Widget build(BuildContext context) {
-    return Transform.rotate(angle: degrees * math.pi / 180, child: child);
+    final rotated = Transform.rotate(
+      angle: degrees * math.pi / 180,
+      child: child,
+    );
+    if (parallax == 0) return rotated;
+    return Parallax(offset: parallax, child: rotated);
   }
 }
 
