@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
+import 'package:semsufoco/widgets/common/reveal_on_scroll.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
 import 'package:semsufoco/widgets/mockups/desktop_mockup.dart';
@@ -34,7 +35,11 @@ class ShowcaseSection extends StatelessWidget {
                     paragraph: _paragraph,
                   ),
                 ),
-                const Positioned(left: 50, top: 291, child: ShowcaseVisual()),
+                const Positioned(
+                  left: 50,
+                  top: 291,
+                  child: RevealOnScroll(child: ShowcaseVisual()),
+                ),
               ],
             ),
           );
@@ -52,7 +57,10 @@ class ShowcaseSection extends StatelessWidget {
                 size: size,
               ),
               const SizedBox(height: 32),
-              ScaledBox(size: ShowcaseVisual.size, child: const ShowcaseVisual()),
+              ScaledBox(
+                size: ShowcaseVisual.size,
+                child: const RevealOnScroll(child: ShowcaseVisual()),
+              ),
             ],
           ),
         );

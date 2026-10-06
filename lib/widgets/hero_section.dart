@@ -5,6 +5,7 @@ import 'package:semsufoco/widgets/common/app_icons.dart';
 import 'package:semsufoco/widgets/common/buttons.dart';
 import 'package:semsufoco/widgets/common/canvas.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
+import 'package:semsufoco/widgets/common/reveal_on_scroll.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
 import 'package:semsufoco/widgets/mockups/finance_cards.dart';
@@ -36,7 +37,11 @@ class HeroSection extends StatelessWidget {
                   width: 640,
                   child: _HeroCopy(size: size, onStart: onStart, onHowItWorks: onHowItWorks),
                 ),
-                const Positioned(left: 530, top: 21, child: HeroVisual()),
+                const Positioned(
+                  left: 530,
+                  top: 21,
+                  child: RevealOnScroll(child: HeroVisual()),
+                ),
               ],
             ),
           );
@@ -58,7 +63,10 @@ class HeroSection extends StatelessWidget {
                       child: RadialGlow(radius: width * 0.8, gradient: AppColors.glow),
                     ),
                   ),
-                  ScaledBox(size: HeroVisual.size, child: const HeroVisual()),
+                  ScaledBox(
+                    size: HeroVisual.size,
+                    child: const RevealOnScroll(child: HeroVisual()),
+                  ),
                 ],
               ),
             ],

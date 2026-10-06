@@ -3,6 +3,7 @@ import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 import 'package:semsufoco/widgets/common/buttons.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
+import 'package:semsufoco/widgets/common/reveal_on_scroll.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
 
@@ -58,7 +59,7 @@ class FeatureBlock extends StatelessWidget {
                 Positioned(
                   left: visualOffset.dx,
                   top: visualOffset.dy,
-                  child: visual,
+                  child: RevealOnScroll(child: visual),
                 ),
                 Positioned(
                   left: reversed ? 640 : 0,
@@ -81,7 +82,10 @@ class FeatureBlock extends StatelessWidget {
             children: [
               _FeatureCopy(content: content, size: size, onStart: onStart),
               const SizedBox(height: 40),
-              ScaledBox(size: visualSize, child: visual),
+              ScaledBox(
+                size: visualSize,
+                child: RevealOnScroll(child: visual),
+              ),
             ],
           ),
         );
