@@ -4,7 +4,6 @@ import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
 import 'package:semsufoco/widgets/mockups/desktop_mockup.dart';
 
-/// "TUDO NUM LUGAR SÓ": desktop dashboard mockup with two callouts.
 class ShowcaseSection extends StatelessWidget {
   const ShowcaseSection({super.key});
 
@@ -62,7 +61,6 @@ class ShowcaseSection extends StatelessWidget {
   }
 }
 
-/// Desktop mockup plus callouts. Frame origin is (170, 1471) on the canvas.
 class ShowcaseVisual extends StatelessWidget {
   const ShowcaseVisual({super.key});
 

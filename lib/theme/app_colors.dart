@@ -1,9 +1,6 @@
 import 'package:flutter/painting.dart';
 
-/// Every color and gradient used by the landing page, taken from
-/// SemSufoco-landing.svg.
 abstract final class AppColors {
-  // Core palette
   static const background = Color(0xFF060B0A);
   static const mint = Color(0xFF3CF2A6);
   static const mintGradientStart = Color(0xFF2FE6AE);
@@ -20,19 +17,16 @@ abstract final class AppColors {
   static const red = Color(0xFFF86166);
   static const iconCircle = Color(0xFF0F4A3B);
 
-  // Pills and buttons
   static const eyebrowBackground = Color(0xFF0C1F1B);
   static const eyebrowBorder = Color(0xFF174A3D);
   static const eyebrowText = Color(0xFF9FE9CE);
   static const secondaryButtonBackground = Color(0xFF0A1613);
   static const secondaryButtonBorder = Color(0xFF1F4A3E);
 
-  // Hero decoration
   static const heroRingInner = Color(0xFF14463A);
   static const heroRingOuter = Color(0xFF10372E);
   static const heroDot = Color(0xCC3CF2A6);
 
-  // Floating cards and chips
   static const floatingCardBackground = Color(0xFF0A1B17);
   static const floatingCardBorder = Color(0xFF1F5A4A);
   static const chipBackground = Color(0xFF0B2A22);
@@ -44,7 +38,6 @@ abstract final class AppColors {
   static const ringTrack = Color(0xFF0F2A24);
   static const redSummaryIcon = Color(0xFF4A1A1E);
 
-  // App mockups
   static const deviceFrame = Color(0xFF0A100E);
   static const deviceFrameBorder = Color(0xFF2E5247);
   static const deviceIsland = Color(0xFF000000);
@@ -63,7 +56,6 @@ abstract final class AppColors {
   static const bottomNavBackground = Color(0xFF07110E);
   static const panelBackground = Color(0xFF0B1715);
 
-  // Desktop mockup
   static const desktopFrame = Color(0xFF07100E);
   static const desktopFrameBorder = Color(0xFF24574A);
   static const browserBar = Color(0xFF0A1512);
@@ -79,7 +71,6 @@ abstract final class AppColors {
   static const monthSelectorBorder = Color(0xFF2A6A58);
   static const chartGrid = Color(0x592A7A66);
 
-  // Add-expense form
   static const backButton = Color(0xFF101514);
   static const fieldBorder = Color(0xFF1B2522);
   static const fieldLabel = Color(0xFF6F837D);
@@ -87,7 +78,6 @@ abstract final class AppColors {
   static const dateIconBackground = Color(0xFF123229);
   static const categoryLabel = Color(0xFFAAB8B3);
 
-  // Categories
   static const saudeBackground = Color(0xFF0E3328);
   static const saude = Color(0xFF1ED9A6);
   static const moradiaBackground = Color(0xFF15233F);
@@ -98,7 +88,6 @@ abstract final class AppColors {
   static const alimentacao = Color(0xFFA87BFF);
   static const alimentacaoSelected = Color(0xFF14102A);
 
-  // Before / after
   static const redCardBorder = Color(0xFF4A2024);
   static const redIconBackground = Color(0xFF3A171A);
   static const redText = Color(0xFFC7AEB0);
@@ -106,17 +95,14 @@ abstract final class AppColors {
   static const greenCardBorder = Color(0xFF1F7A60);
   static const greenDivider = Color(0xFF1B5A48);
 
-  // FAQ
   static const faqOpenBorder = Color(0xFF1F7A60);
 
-  // Final CTA
   static const ctaPanelBorder = Color(0xFF2FBE92);
   static const ctaSubtitle = Color(0xFFC5E8DC);
   static const ctaNote = Color(0xFF9FD9C6);
   static const ctaDecor = Color(0x123CF2A6);
   static const stepNumber = Color(0x1F3CF2A6);
 
-  // Gradients (SVG <defs>)
   static const mintGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,

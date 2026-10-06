@@ -4,10 +4,6 @@ import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 import 'package:semsufoco/widgets/common/app_icons.dart';
 
-/// Helpers for fixed-size compositions (mockups, floating cards) laid out with
-/// the same coordinates as SemSufoco-landing.svg. They return [Positioned], so
-/// use them as direct children of a [Stack]. For text, `y` is the baseline.
-
 enum Anchor { start, middle, end }
 
 const double _kTextSlot = 1200;
@@ -33,7 +29,6 @@ Positioned cText(
   );
 }
 
-/// Multi-color text run, e.g. the "Sem" + "Sufoco" wordmark.
 Positioned cSpans(
   List<(String, Color)> spans,
   double x,
@@ -133,7 +128,6 @@ Positioned cCircle(
   );
 }
 
-/// `<g transform="translate(x y) scale(s)">` icon from the design file.
 Positioned cIcon(
   String icon,
   double x,

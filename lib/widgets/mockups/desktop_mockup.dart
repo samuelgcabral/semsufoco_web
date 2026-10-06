@@ -13,7 +13,7 @@ const _desktopWave =
     '</svg>';
 
 const _desktopBars = [
-  42.25, 53.62, 53.62, 71.5, 53.62, 66.62, 47.12, 73.12, 86.12, 79.62, //
+  42.25, 53.62, 53.62, 71.5, 53.62, 66.62, 47.12, 73.12, 86.12, 79.62,
   79.62, 107.25, 71.5, 66.62, 66.62, 53.62, 47.12, 78.0, 66.62, 53.62,
   61.75, 42.25, 21.12, 71.5, 53.62, 47.12, 32.5, 9.75, 25.35, 16.9,
 ];
@@ -28,7 +28,6 @@ const _xLabels = [
   ('30', 707.5),
 ];
 
-/// 1100x604 browser window showing the desktop dashboard.
 class DesktopMockup extends StatelessWidget {
   const DesktopMockup({super.key});
 
@@ -59,7 +58,6 @@ class DesktopMockup extends StatelessWidget {
               borderRadius: BorderRadius.circular(22),
               child: Stack(
                 children: [
-                  // Browser chrome
                   cBox(0, 0, 1100, 44, color: AppColors.browserBar),
                   cBox(0, 44, 1100, 1, color: AppColors.browserDivider),
                   cCircle(26, 22, 6, color: AppColors.trafficRed),
@@ -99,7 +97,6 @@ class _DesktopBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Sidebar
         cBox(0, 0, 150, 560, color: AppColors.sidebar),
         cBox(150, 0, 1, 560, color: AppColors.sidebarDivider),
         cAt(62, 20, const AppLogo(scale: 0.9, showText: false)),
@@ -110,7 +107,6 @@ class _DesktopBody extends StatelessWidget {
         ..._sideItem(323, AppIcons.barChart, 'Relatórios'),
         ..._sideItem(399, AppIcons.sliders, 'Configurações'),
 
-        // Header
         cSpans(
           [('Sem', AppColors.textPrimary), ('Sufoco', AppColors.mint)],
           180,
@@ -125,7 +121,6 @@ class _DesktopBody extends StatelessWidget {
         cText('RJ', 1052, 38.5, 12, weight: FontWeight.w700, anchor: Anchor.middle),
         cIcon(AppIcons.chevronDown, 1068, 26, scale: 0.6667, color: AppColors.textMuted, stroke: 3),
 
-        // Balance card
         cBox(
           178,
           76,
@@ -176,7 +171,6 @@ class _DesktopBody extends StatelessWidget {
         for (final (label, x) in _xLabels)
           cText(label, x, 366, 10.5, color: AppColors.textMuted, anchor: Anchor.middle),
 
-        // Recent transactions
         cBox(
           762,
           76,
@@ -192,7 +186,6 @@ class _DesktopBody extends StatelessWidget {
         ..._transaction(2, AppIcons.car, 'Posto de combustível', 'Transporte', r'- R$ 200,00', false),
         ..._transaction(3, AppIcons.gamepad, 'Steam', 'Lazer', r'- R$ 59,90', false),
 
-        // Shortcuts
         cText('Atalhos rápidos', 178, 420, 17, weight: FontWeight.w700),
         cText(
           'Ver todos',

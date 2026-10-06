@@ -3,12 +3,9 @@ import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 
-/// Joins design lines with hard breaks on wide layouts and lets them reflow
-/// on narrow ones.
 String joinLines(List<String> lines, {required bool wide}) =>
     lines.join(wide ? '\n' : ' ');
 
-/// Small uppercase mint label above section titles.
 class SectionEyebrow extends StatelessWidget {
   const SectionEyebrow(this.text, {super.key, this.textAlign = TextAlign.left});
 
@@ -31,7 +28,6 @@ class SectionEyebrow extends StatelessWidget {
   }
 }
 
-/// Two-tone title: a white line followed by an optional mint line.
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
     super.key,
@@ -74,7 +70,6 @@ class SectionTitle extends StatelessWidget {
   }
 }
 
-/// Centered eyebrow + title + optional paragraph used by most sections.
 class SectionHeader extends StatelessWidget {
   const SectionHeader({
     super.key,
@@ -123,8 +118,6 @@ class SectionHeader extends StatelessWidget {
   }
 }
 
-/// Rounded pill with a mint dot, used for the hero eyebrow and the showcase
-/// callouts.
 class PillLabel extends StatelessWidget {
   const PillLabel({
     super.key,
@@ -135,7 +128,6 @@ class PillLabel extends StatelessWidget {
     this.fontSize = 14,
   });
 
-  /// Showcase callout variant.
   const PillLabel.callout({super.key, required this.text})
     : background = AppColors.chipBackground,
       borderColor = AppColors.chipBorder,

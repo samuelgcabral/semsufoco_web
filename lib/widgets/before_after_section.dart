@@ -6,7 +6,6 @@ import 'package:semsufoco/widgets/common/cards.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
 
-/// "DO APERTO À CLAREZA": red "Sem organização" vs green "Com o SemSufoco".
 class BeforeAfterSection extends StatelessWidget {
   const BeforeAfterSection({super.key});
 
@@ -53,15 +52,17 @@ class BeforeAfterSection extends StatelessWidget {
               children: [
                 header,
                 const SizedBox(height: 50.7),
-                const SizedBox(
-                  height: 420,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Expanded(child: _before),
-                      SizedBox(width: 24),
-                      Expanded(child: _after),
-                    ],
+                ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 420),
+                  child: const IntrinsicHeight(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Expanded(child: _before),
+                        SizedBox(width: 24),
+                        Expanded(child: _after),
+                      ],
+                    ),
                   ),
                 ),
               ],

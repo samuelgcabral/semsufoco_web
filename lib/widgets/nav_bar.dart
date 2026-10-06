@@ -4,7 +4,6 @@ import 'package:semsufoco/widgets/common/app_logo.dart';
 import 'package:semsufoco/widgets/common/buttons.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 
-/// Sticky 88px top bar with a full-width 1px divider.
 class NavBar extends StatelessWidget {
   const NavBar({
     super.key,
@@ -34,7 +33,6 @@ class NavBar extends StatelessWidget {
             height: 88,
             child: SectionContainer.builder(
               builder: (context, size, width) {
-                // Mobile collapses to logo + "Começar"; tablet adds "Entrar".
                 final showLinks = size == ScreenSize.desktop;
                 final showLogin = size != ScreenSize.mobile;
                 return Row(
@@ -80,7 +78,6 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  // In the design the link baselines sit 4.5px below the button's center line.
   Widget _link(
     String label,
     VoidCallback onPressed, {

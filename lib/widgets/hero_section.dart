@@ -10,8 +10,6 @@ import 'package:semsufoco/widgets/common/section_heading.dart';
 import 'package:semsufoco/widgets/mockups/finance_cards.dart';
 import 'package:semsufoco/widgets/mockups/phone_mockup.dart';
 
-/// Hero: copy on the left, rotated phone with floating cards on the right.
-/// Wide coordinates are the SVG's minus (120, 89).
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key, required this.onStart, required this.onHowItWorks});
 
@@ -106,7 +104,6 @@ class _HeroCopy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wide = size == ScreenSize.desktop;
-    // ~40px on mobile as requested, 52px on tablet, 62px (design) on desktop.
     final headlineSize = switch (size) {
       ScreenSize.desktop => 62.0,
       ScreenSize.tablet => 52.0,
@@ -195,8 +192,6 @@ class _TrustItem extends StatelessWidget {
   }
 }
 
-/// Rotated phone plus the three floating cards. Frame origin is (650, 110) on
-/// the design canvas.
 class HeroVisual extends StatelessWidget {
   const HeroVisual({super.key});
 

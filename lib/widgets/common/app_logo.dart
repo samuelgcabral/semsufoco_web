@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 
-/// Two mint pills + "Sem" (white) "Sufoco" (mint). 28px tall at scale 1.
 class AppLogo extends StatelessWidget {
   const AppLogo({super.key, this.scale = 1, this.showText = true});
 
@@ -32,7 +31,6 @@ class AppLogo extends StatelessWidget {
         children: [
           mark,
           SizedBox(width: 10 * scale),
-          // Baseline at y=24 of the 28px mark.
           Padding(
             padding: EdgeInsets.only(top: 24 * scale - AppText.baseline(size, 24 * scale)),
             child: Text.rich(

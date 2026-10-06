@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'SemSufoco',
+      debugShowCheckedModeBanner: false,
       theme: getAppTheme(),
       routerConfig: _router,
     );

@@ -5,8 +5,6 @@ import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 import 'package:semsufoco/widgets/common/app_icons.dart';
 
-/// Dark card with a border, radius and optional gradient. Unlike [Container],
-/// the border does not inset the child, so child coordinates match the SVG.
 class GlassCard extends StatelessWidget {
   const GlassCard({
     super.key,
@@ -49,7 +47,6 @@ class GlassCard extends StatelessWidget {
   }
 }
 
-/// Rotates its child around its center by [degrees].
 class FloatingCard extends StatelessWidget {
   const FloatingCard({super.key, required this.degrees, required this.child});
 
@@ -62,7 +59,6 @@ class FloatingCard extends StatelessWidget {
   }
 }
 
-/// Soft radial glow of the given radius.
 class RadialGlow extends StatelessWidget {
   const RadialGlow({
     super.key,
@@ -86,7 +82,6 @@ class RadialGlow extends StatelessWidget {
   }
 }
 
-/// Positions a [RadialGlow] centered on (cx, cy) inside a [Stack].
 Positioned positionedGlow(
   double cx,
   double cy,
@@ -100,7 +95,6 @@ Positioned positionedGlow(
   );
 }
 
-/// Mint circle with a check mark followed by a feature line.
 class FeatureCheckItem extends StatelessWidget {
   const FeatureCheckItem(this.text, {super.key, this.wide = true});
 

@@ -6,7 +6,6 @@ import 'package:semsufoco/widgets/common/canvas.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 
-/// "SEU MÊS EM UM RELANCE": four sample summary cards.
 class SummaryCardsSection extends StatelessWidget {
   const SummaryCardsSection({super.key});
 
@@ -90,7 +89,6 @@ class SummaryCardsSection extends StatelessWidget {
   }
 }
 
-/// 130px tall summary card. Shows either a [delta] or a [progress] bar.
 class SummaryCard extends StatelessWidget {
   const SummaryCard({
     super.key,

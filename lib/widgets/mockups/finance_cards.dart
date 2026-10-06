@@ -6,7 +6,6 @@ import 'package:semsufoco/widgets/common/app_icons.dart';
 import 'package:semsufoco/widgets/common/canvas.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
 
-/// "Meta do mês" card with a 75% progress bar (236x108).
 class GoalMiniCard extends StatelessWidget {
   const GoalMiniCard({super.key});
 
@@ -41,7 +40,6 @@ class GoalMiniCard extends StatelessWidget {
   }
 }
 
-/// "Gasto adicionado" toast (330x76).
 class ExpenseToastCard extends StatelessWidget {
   const ExpenseToastCard({super.key});
 
@@ -75,7 +73,6 @@ class ExpenseToastCard extends StatelessWidget {
   }
 }
 
-/// "+12% este mês" chip (164x46).
 class TrendChip extends StatelessWidget {
   const TrendChip({super.key});
 
@@ -99,7 +96,6 @@ class TrendChip extends StatelessWidget {
   }
 }
 
-/// Single transaction row as a floating card (320x68).
 class TransactionFloatCard extends StatelessWidget {
   const TransactionFloatCard({
     super.key,
@@ -155,7 +151,6 @@ const _sparkline =
     '<path d="M24 126 C 60 120, 80 96, 112 104 S 170 84, 200 92 S 250 70, 276 62" fill="none" stroke="#3CF2A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'
     '</svg>';
 
-/// "Saldo futuro" card with a sparkline (300x160).
 class FutureBalanceCard extends StatelessWidget {
   const FutureBalanceCard({super.key});
 
@@ -193,7 +188,6 @@ class FutureBalanceCard extends StatelessWidget {
 
 const _reportBars = [20.0, 34.0, 28.0, 44.0, 30.0, 50.0, 38.0, 26.0, 46.0, 34.0];
 
-/// "Relatório de setembro" mini bar chart (240x124).
 class MonthlyReportCard extends StatelessWidget {
   const MonthlyReportCard({super.key});
 
@@ -224,7 +218,6 @@ class MonthlyReportCard extends StatelessWidget {
   }
 }
 
-/// "Meta do mês" card with the 75% progress ring (320x360).
 class GoalRingCard extends StatelessWidget {
   const GoalRingCard({super.key});
 
@@ -274,7 +267,6 @@ class GoalRingCard extends StatelessWidget {
   }
 }
 
-/// Progress ring: dark track plus a mint sweep-gradient arc from 12 o'clock.
 class GoalRingPainter extends CustomPainter {
   const GoalRingPainter({required this.progress, this.strokeWidth = 20});
 
@@ -295,8 +287,6 @@ class GoalRingPainter extends CustomPainter {
         ..color = AppColors.ringTrack,
     );
 
-    // Start the gradient slightly before 12 o'clock so the round start cap
-    // stays mint instead of picking up the end color.
     const lead = 0.15;
     final sweep = 2 * math.pi * progress;
     final shader = SweepGradient(
@@ -324,7 +314,6 @@ class GoalRingPainter extends CustomPainter {
       oldDelegate.progress != progress || oldDelegate.strokeWidth != strokeWidth;
 }
 
-/// Transaction detail card (420x470).
 class TransactionDetailCard extends StatelessWidget {
   const TransactionDetailCard({super.key});
 

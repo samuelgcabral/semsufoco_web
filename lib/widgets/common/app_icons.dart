@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:semsufoco/theme/app_colors.dart';
 
-/// Lucide icon bodies (24x24 viewBox), copied from SemSufoco-landing.svg.
 abstract final class AppIcons {
   static const arrowRight = '<path d="M5 12h14M13 5l7 7-7 7"/>';
   static const arrowUpRight = '<path d="M7 17L17 7M8 7h9v9"/>';
@@ -59,8 +58,6 @@ abstract final class AppIcons {
       '<path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>';
 }
 
-/// Renders one of [AppIcons]. [strokeWidth] is in viewBox units, matching the
-/// `stroke-width` attribute of the design file.
 class AppIcon extends StatelessWidget {
   const AppIcon(
     this.icon, {

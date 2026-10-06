@@ -3,7 +3,6 @@ import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
 import 'package:semsufoco/widgets/common/app_icons.dart';
 
-/// Shared hover handling: pointer cursor plus a small lift.
 class _Hoverable extends StatefulWidget {
   const _Hoverable({required this.onTap, required this.builder});
 
@@ -32,7 +31,6 @@ class _HoverableState extends State<_Hoverable> {
   }
 }
 
-/// Mint gradient pill button.
 class GradientButton extends StatelessWidget {
   const GradientButton({
     super.key,
@@ -99,7 +97,6 @@ class GradientButton extends StatelessWidget {
   }
 }
 
-/// Dark outlined pill button.
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
     super.key,
@@ -123,7 +120,6 @@ class SecondaryButton extends StatelessWidget {
       builder: (hovered) => AnimatedContainer(
         duration: const Duration(milliseconds: 180),
         height: height,
-        alignment: Alignment.center,
         padding: EdgeInsets.symmetric(horizontal: horizontalPadding - 1),
         decoration: BoxDecoration(
           color: AppColors.secondaryButtonBackground,
@@ -132,12 +128,15 @@ class SecondaryButton extends StatelessWidget {
             color: hovered ? AppColors.chipBorder : AppColors.secondaryButtonBorder,
           ),
         ),
-        child: Text(
-          label,
-          style: AppText.style(
-            fontSize,
-            weight: FontWeight.w700,
-            lineHeight: fontSize * 1.25,
+        child: Align(
+          widthFactor: 1,
+          child: Text(
+            label,
+            style: AppText.style(
+              fontSize,
+              weight: FontWeight.w700,
+              lineHeight: fontSize * 1.25,
+            ),
           ),
         ),
       ),
@@ -145,7 +144,6 @@ class SecondaryButton extends StatelessWidget {
   }
 }
 
-/// Mint "Começar agora →" text link.
 class ArrowTextLink extends StatelessWidget {
   const ArrowTextLink({super.key, required this.label, this.onPressed});
 
@@ -184,7 +182,6 @@ class ArrowTextLink extends StatelessWidget {
   }
 }
 
-/// Plain text link used in the nav bar and footer.
 class NavTextLink extends StatelessWidget {
   const NavTextLink({
     super.key,

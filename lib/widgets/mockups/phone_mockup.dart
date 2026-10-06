@@ -4,8 +4,6 @@ import 'package:semsufoco/widgets/common/app_icons.dart';
 import 'package:semsufoco/widgets/common/app_logo.dart';
 import 'package:semsufoco/widgets/common/canvas.dart';
 
-/// 356x736 phone frame with a 340x720 screen. [screen] is laid out in screen
-/// coordinates (a [Stack] of `c*` helpers).
 class PhoneMockup extends StatelessWidget {
   const PhoneMockup({super.key, required this.screen});
 
@@ -95,12 +93,11 @@ const _phoneWave =
     '</svg>';
 
 const _homeBars = [
-  27.58, 35.0, 35.0, 46.67, 35.0, 43.48, 30.76, 47.73, 56.21, 51.97, 51.97, //
+  27.58, 35.0, 35.0, 46.67, 35.0, 43.48, 30.76, 47.73, 56.21, 51.97, 51.97,
   70.0, 46.67, 43.48, 43.48, 35.0, 30.76, 50.91, 43.48, 35.0, 40.3, 27.58,
   13.79, 46.67, 35.0, 30.76,
 ];
 
-/// App home screen shown in the hero phone.
 class PhoneHomeScreen extends StatelessWidget {
   const PhoneHomeScreen({super.key});
 
@@ -108,7 +105,6 @@ class PhoneHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Header
         cAt(16, 56, const AppLogo(scale: 0.78, showText: false)),
         cSpans(
           [('Sem', AppColors.textPrimary), ('Sufoco', AppColors.mint)],
@@ -122,7 +118,6 @@ class PhoneHomeScreen extends StatelessWidget {
         cCircle(306, 73, 15, color: AppColors.avatar),
         cText('RJ', 306, 77.5, 11, weight: FontWeight.w700, anchor: Anchor.middle),
 
-        // Balance card
         cBox(
           16,
           100,
@@ -149,7 +144,6 @@ class PhoneHomeScreen extends StatelessWidget {
             gradient: AppColors.bar,
           ),
 
-        // Shortcuts
         cText('Atalhos rápidos', 16, 336, 15, weight: FontWeight.w700),
         cText(
           'Ver todos',
@@ -169,7 +163,6 @@ class PhoneHomeScreen extends StatelessWidget {
         ..._shortcut(174, AppIcons.target, const ['Metas']),
         ..._shortcut(253, AppIcons.fileText, const ['Relatórios']),
 
-        // Recent transactions
         cText('Movimentações recentes', 16, 470, 15, weight: FontWeight.w700),
         cBox(
           16,
@@ -184,7 +177,6 @@ class PhoneHomeScreen extends StatelessWidget {
         ..._transaction(1, AppIcons.briefcase, 'Salário', 'Renda', r'+ R$ 2.500,00', true),
         ..._transaction(2, AppIcons.car, 'Posto de combustível', 'Transporte', r'- R$ 200,00', false),
 
-        // Bottom navigation
         cBox(0, 650, 340, 70, color: AppColors.bottomNavBackground),
         cBox(0, 650, 340, 1, color: AppColors.rowDivider),
         ..._navItem(24, AppIcons.home, 'Início', active: true),
@@ -254,7 +246,6 @@ class PhoneHomeScreen extends StatelessWidget {
   }
 }
 
-/// "Adicionar Gasto" form shown in the quick-entry feature block.
 class PhoneAddExpenseScreen extends StatelessWidget {
   const PhoneAddExpenseScreen({super.key});
 
