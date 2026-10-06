@@ -20,13 +20,13 @@ class HowItWorksSection extends StatelessWidget {
       '02',
       AppIcons.layers,
       'Organize',
-      ['Cada gasto vai para a categoria', 'certa e o saldo se atualiza.'],
+      ['Cada gasto vai para uma categoria,', 'com um extrato só dela.'],
     ),
     (
       '03',
-      AppIcons.target,
-      'Conquiste',
-      ['Defina metas, acompanhe o', 'progresso e planeje o próximo mês.'],
+      AppIcons.barChart,
+      'Acompanhe',
+      ['Veja o saldo, o gráfico do mês e', 'compare com o mês anterior.'],
     ),
   ];
 

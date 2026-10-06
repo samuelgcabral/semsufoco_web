@@ -21,24 +21,25 @@ class _FaqSectionState extends State<FaqSection> {
     ),
     (
       'Como registro um gasto?',
-      'Toque em "Nova despesa", escolha a data, dê um nome, informe o valor e '
-          'selecione a categoria. Pronto: o gasto entra no seu mês e o saldo se '
-          'atualiza sozinho.',
+      'Toque em "Adicionar" na barra de baixo. Informe data, horário, '
+          'estabelecimento e valor, adicione uma descrição se quiser e escolha a '
+          'categoria e a forma de pagamento.',
     ),
     (
       'Posso separar os gastos por categoria?',
-      'Sim. Cada gasto fica em uma categoria, como Saúde, Moradia, Transporte '
-          'ou Alimentação, e você pode trocar a categoria em um toque.',
+      'Sim. Cada gasto fica em uma categoria, como Alimentação, Moradia, '
+          'Transporte, Saúde ou Lazer. Abrindo uma categoria, você vê o total e '
+          'todas as transações dela.',
     ),
     (
-      'Como acompanho minhas metas?',
-      'Defina a meta do mês e acompanhe o progresso pela barra de meta. O saldo '
-          'futuro mostra para onde o seu dinheiro vai antes de o mês acabar.',
+      'Consigo comparar com o mês anterior?',
+      'Sim. A tela inicial mostra o saldo atual e quanto ele mudou em relação '
+          'ao mês anterior. No gráfico, você escolhe o mês que quer ver.',
     ),
     (
       'Funciona bem no celular?',
-      'Sim. A tela se adapta ao celular, ao tablet e ao computador, e tudo '
-          'funciona direto no navegador, sem instalar nada.',
+      'Sim. O SemSufoco foi feito pensando no celular e roda direto no '
+          'navegador, sem instalar nada.',
     ),
   ];
 

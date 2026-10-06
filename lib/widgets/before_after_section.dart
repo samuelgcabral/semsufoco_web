@@ -16,7 +16,7 @@ class BeforeAfterSection extends StatelessWidget {
       'Planilha que ninguém atualiza',
       'Gastos anotados em vários lugares',
       'Susto quando a fatura chega',
-      'Meta guardada só na cabeça',
+      'Nenhuma ideia de quanto sobrou',
     ],
   );
 
@@ -25,9 +25,9 @@ class BeforeAfterSection extends StatelessWidget {
     title: 'Com o SemSufoco',
     items: [
       'Cada gasto registrado em segundos',
-      'Categorias claras para tudo',
-      'Saldo e saldo futuro sempre à vista',
-      'Metas com progresso visível',
+      'Categorias com extrato próprio',
+      'Saldo atual sempre à vista',
+      'O mês inteiro num gráfico',
     ],
   );
 

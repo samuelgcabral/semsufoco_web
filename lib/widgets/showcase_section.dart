@@ -4,14 +4,14 @@ import 'package:semsufoco/widgets/common/parallax.dart';
 import 'package:semsufoco/widgets/common/reveal_on_scroll.dart';
 import 'package:semsufoco/widgets/common/section_container.dart';
 import 'package:semsufoco/widgets/common/section_heading.dart';
-import 'package:semsufoco/widgets/mockups/desktop_mockup.dart';
+import 'package:semsufoco/widgets/mockups/phone_mockup.dart';
 
 class ShowcaseSection extends StatelessWidget {
   const ShowcaseSection({super.key});
 
   static const _paragraph = [
-    'Chega de pular entre planilha, caderno e extrato. Receitas, despesas e metas',
-    'ficam juntas, organizadas e fáceis de ver.',
+    'Chega de pular entre planilha, caderno e extrato. Receitas, despesas e',
+    'categorias ficam juntas, organizadas e fáceis de ver.',
   ];
 
   @override
@@ -73,7 +73,9 @@ class ShowcaseSection extends StatelessWidget {
 class ShowcaseVisual extends StatelessWidget {
   const ShowcaseVisual({super.key});
 
-  static const size = Size(1100, 642);
+  static const size = Size(1100, 680);
+
+  static const _phoneScale = 0.82;
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +84,29 @@ class ShowcaseVisual extends StatelessWidget {
       child: const Stack(
         clipBehavior: Clip.none,
         children: [
-          Positioned(left: 0, top: 19, child: DesktopMockup()),
           Positioned(
-            left: 210,
+            left: 110,
+            top: 70,
+            child: FloatingCard(
+              degrees: -5,
+              child: ScaledPhone(scale: _phoneScale, screen: PhoneCategoriesScreen()),
+            ),
+          ),
+          Positioned(
+            left: 698,
+            top: 70,
+            child: FloatingCard(
+              degrees: 5,
+              child: ScaledPhone(scale: _phoneScale, screen: PhoneCategoryExtractScreen()),
+            ),
+          ),
+          Positioned(
+            left: 404,
+            top: 30,
+            child: ScaledPhone(scale: _phoneScale, screen: PhoneHomeScreen()),
+          ),
+          Positioned(
+            left: 150,
             top: 0,
             child: Parallax(
               offset: 30,
@@ -93,12 +115,10 @@ class ShowcaseVisual extends StatelessWidget {
           ),
           Positioned(
             left: 690,
-            top: 604,
+            top: 630,
             child: Parallax(
               offset: -30,
-              child: PillLabel.callout(
-                text: 'Atalhos para o que você mais faz',
-              ),
+              child: PillLabel.callout(text: 'Extrato separado por categoria'),
             ),
           ),
         ],

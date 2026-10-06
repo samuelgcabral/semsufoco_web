@@ -20,14 +20,14 @@ class FeaturesSection extends StatelessWidget {
             titleWhite: 'Registrar um gasto',
             titleMint: 'leva segundos.',
             paragraph: [
-              'Escolha a data, dê um nome, informe o valor e toque na',
-              'categoria. Pronto: o gasto entra no seu mês e o saldo',
-              'se atualiza sozinho.',
+              'Data, horário, estabelecimento, valor e descrição numa',
+              'tela só. Depois é só tocar na categoria e escolher a',
+              'forma de pagamento.',
             ],
             checks: [
-              'Data do lançamento sempre à mão',
-              'Valor em reais, do jeito que você digita',
-              'Saúde, Moradia, Transporte e Alimentação',
+              'Data e horário de cada lançamento',
+              'Crédito, débito, Pix ou dinheiro',
+              'Categorias como Alimentação, Moradia e Transporte',
             ],
           ),
           visual: const QuickEntryVisual(),
@@ -44,41 +44,41 @@ class FeaturesSection extends StatelessWidget {
             titleWhite: 'Saiba pra onde',
             titleMint: 'seu dinheiro foi.',
             paragraph: [
-              'Cada movimentação mostra valor, categoria, data e horário.',
-              'Receitas em verde, despesas em vermelho, e nada se perde',
-              'no meio do caminho.',
+              'Cada movimentação mostra valor, categoria, data, horário',
+              'e estabelecimento. Abra uma categoria e veja o total e',
+              'todas as transações dela.',
             ],
             checks: [
-              'Receitas e despesas com cores distintas',
-              'Categoria editável em um toque',
-              'Histórico em Movimentações recentes',
+              'Receitas em verde, despesas em vermelho',
+              'Extrato separado por categoria',
+              'Detalhes completos de cada movimentação',
             ],
           ),
           visual: const CategoriesVisual(),
           visualSize: CategoriesVisual.size,
           height: 700,
           textTop: 117.27,
-          visualOffset: const Offset(-90, 90),
+          visualOffset: const Offset(-90, 60),
           onStart: onStart,
         ),
         FeatureBlock(
           content: const FeatureContent(
-            eyebrow: 'METAS E PLANEJAMENTO',
-            titleWhite: 'Metas que saem',
-            titleMint: 'do papel.',
+            eyebrow: 'ACOMPANHAMENTO DO MÊS',
+            titleWhite: 'O seu mês inteiro',
+            titleMint: 'num gráfico.',
             paragraph: [
-              'Defina a meta do mês e acompanhe o progresso. O saldo',
-              'futuro mostra para onde o seu dinheiro vai antes de o',
-              'mês acabar.',
+              'Receitas, despesas e saldo a cada cinco dias. Troque o',
+              'mês para olhar para trás e veja quanto o saldo mudou',
+              'em relação ao mês anterior.',
             ],
             checks: [
-              'Barra de progresso da meta do mês',
-              'Saldo futuro sempre à vista',
-              'Relatórios para entender o seu mês',
+              'Gráfico de receitas, despesas e saldo',
+              'Seletor para ver meses anteriores',
+              'Esconda o saldo com um toque',
             ],
           ),
-          visual: const GoalsVisual(),
-          visualSize: GoalsVisual.size,
+          visual: const MonthlyVisual(),
+          visualSize: MonthlyVisual.size,
           height: 760,
           textTop: 187.27,
           visualOffset: const Offset(640, 130),
@@ -107,7 +107,7 @@ class QuickEntryVisual extends StatelessWidget {
             top: 10,
             child: FloatingCard(
               degrees: 3,
-              child: PhoneMockup(screen: PhoneAddExpenseScreen()),
+              child: PhoneMockup(screen: PhoneNewTransactionScreen()),
             ),
           ),
         ],
@@ -119,7 +119,7 @@ class QuickEntryVisual extends StatelessWidget {
 class CategoriesVisual extends StatelessWidget {
   const CategoriesVisual({super.key});
 
-  static const size = Size(700, 580);
+  static const size = Size(700, 600);
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +128,7 @@ class CategoriesVisual extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          positionedGlow(370, 260, 440),
+          positionedGlow(370, 280, 440),
           const Positioned(left: 160, top: 30, child: TransactionDetailCard()),
           const Positioned(
             left: 10,
@@ -137,25 +137,25 @@ class CategoriesVisual extends StatelessWidget {
               degrees: -5,
               parallax: 40,
               child: TransactionFloatCard(
-                icon: AppIcons.briefcase,
+                icon: AppIcons.wallet,
                 title: 'Salário',
-                category: 'Renda',
-                amount: r'+ R$ 2.500,00',
+                category: 'Salário',
+                amount: r'+ R$ 2.350,00',
                 income: true,
               ),
             ),
           ),
           const Positioned(
             left: 362,
-            top: 488,
+            top: 520,
             child: FloatingCard(
               degrees: 5,
               parallax: -40,
               child: TransactionFloatCard(
                 icon: AppIcons.car,
-                title: 'Posto de combustível',
+                title: 'Oficina Blumenau',
                 category: 'Transporte',
-                amount: r'- R$ 200,00',
+                amount: r'- R$ 180,00',
                 income: false,
               ),
             ),
@@ -166,8 +166,8 @@ class CategoriesVisual extends StatelessWidget {
   }
 }
 
-class GoalsVisual extends StatelessWidget {
-  const GoalsVisual({super.key});
+class MonthlyVisual extends StatelessWidget {
+  const MonthlyVisual({super.key});
 
   static const size = Size(580, 600);
 
@@ -179,23 +179,23 @@ class GoalsVisual extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           positionedGlow(240, 300, 430),
-          const Positioned(left: 20, top: 90, child: GoalRingCard()),
+          const Positioned(left: 20, top: 80, child: BalanceChartCard()),
           const Positioned(
-            left: 260,
-            top: 420,
+            left: 350,
+            top: 400,
             child: FloatingCard(
               degrees: 3,
               parallax: -40,
-              child: FutureBalanceCard(),
+              child: MonthPickerCard(),
             ),
           ),
           const Positioned(
-            left: 316,
-            top: 20,
+            left: 300,
+            top: 0,
             child: FloatingCard(
               degrees: 4,
               parallax: 40,
-              child: MonthlyReportCard(),
+              child: HiddenBalanceChip(),
             ),
           ),
         ],

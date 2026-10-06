@@ -19,7 +19,7 @@ class Parallax extends StatefulWidget {
 
 class _ParallaxState extends State<Parallax>
     with SingleTickerProviderStateMixin {
-  late final Ticker _ticker = createTicker(_tick);
+  Ticker? _ticker;
   final ValueNotifier<double> _current = ValueNotifier(0);
   double _target = 0;
   ScrollPosition? _position;
@@ -52,8 +52,9 @@ class _ParallaxState extends State<Parallax>
     _target = ((half - center) / half).clamp(-1.0, 1.0) * widget.offset;
     if (snap) {
       _current.value = _target;
-    } else if (!_ticker.isActive) {
-      _ticker.start();
+    } else {
+      final ticker = _ticker ??= createTicker(_tick);
+      if (!ticker.isActive) ticker.start();
     }
   }
 
@@ -61,7 +62,7 @@ class _ParallaxState extends State<Parallax>
     final next = _current.value + (_target - _current.value) * widget.smoothing;
     if ((next - _target).abs() < 0.1) {
       _current.value = _target;
-      _ticker.stop();
+      _ticker?.stop();
     } else {
       _current.value = next;
     }
@@ -70,7 +71,7 @@ class _ParallaxState extends State<Parallax>
   @override
   void dispose() {
     _position?.removeListener(_update);
-    _ticker.dispose();
+    _ticker?.dispose();
     _current.dispose();
     super.dispose();
   }

@@ -11,29 +11,28 @@ class SummaryCardsSection extends StatelessWidget {
 
   static const _cards = [
     SummaryCard(
-      icon: AppIcons.arrowUpRight,
-      label: 'Receitas',
-      value: r'R$ 4.250,00',
-      delta: '+ 8%',
+      icon: AppIcons.wallet,
+      label: 'Saldo atual',
+      value: r'R$ 3.000,00',
+      delta: '+ 12%',
     ),
     SummaryCard(
-      icon: AppIcons.arrowDown,
-      label: 'Despesas',
-      value: r'R$ 1.250,00',
-      delta: '- 4%',
+      icon: AppIcons.utensils,
+      label: 'Alimentação',
+      value: r'- R$ 400,50',
       negative: true,
     ),
     SummaryCard(
-      icon: AppIcons.target,
-      label: 'Meta do mês',
-      value: r'R$ 2.000,00',
-      progress: 0.75,
+      icon: AppIcons.home,
+      label: 'Moradia',
+      value: r'- R$ 2.345,50',
+      negative: true,
     ),
     SummaryCard(
-      icon: AppIcons.wallet,
-      label: 'Saldo futuro',
-      value: r'R$ 3.500,00',
-      delta: '+ 15%',
+      icon: AppIcons.car,
+      label: 'Transporte',
+      value: r'- R$ 886,70',
+      negative: true,
     ),
   ];
 
@@ -97,7 +96,6 @@ class SummaryCard extends StatelessWidget {
     required this.value,
     this.delta,
     this.negative = false,
-    this.progress,
   });
 
   final String icon;
@@ -105,7 +103,6 @@ class SummaryCard extends StatelessWidget {
   final String value;
   final String? delta;
   final bool negative;
-  final double? progress;
 
   @override
   Widget build(BuildContext context) {
@@ -125,31 +122,6 @@ class SummaryCard extends StatelessWidget {
           cText(value, 24, 96, 26, weight: FontWeight.w800),
           if (delta != null)
             _rightText(delta!, 96, 13, accent),
-          if (progress != null) ...[
-            Positioned(
-              left: 24,
-              right: 88,
-              top: 108,
-              height: 7,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: AppColors.progressTrack,
-                  borderRadius: BorderRadius.circular(3.5),
-                ),
-                child: FractionallySizedBox(
-                  alignment: Alignment.centerLeft,
-                  widthFactor: progress,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: AppColors.mintGradient,
-                      borderRadius: BorderRadius.circular(3.5),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            _rightText('${(progress! * 100).round()}%', 114, 12.5, AppColors.mint),
-          ],
         ],
       ),
     );

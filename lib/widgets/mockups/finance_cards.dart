@@ -1,72 +1,27 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/widgets/common/app_icons.dart';
 import 'package:semsufoco/widgets/common/canvas.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
+import 'package:semsufoco/widgets/mockups/phone_mockup.dart';
 
-class GoalMiniCard extends StatelessWidget {
-  const GoalMiniCard({super.key});
+class CategoryMiniCard extends StatelessWidget {
+  const CategoryMiniCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GlassCard(
       width: 236,
-      height: 108,
+      height: 80,
       color: AppColors.floatingCardBackground,
       borderColor: AppColors.floatingCardBorder,
       borderWidth: 1.2,
       child: Stack(
         children: [
-          cCircle(38, 34, 20, color: AppColors.iconCircle),
-          cIcon(AppIcons.target, 26, 22, stroke: 1.9),
-          cText('Meta do mês', 70, 30, 12.5, weight: FontWeight.w500, color: AppColors.textMuted),
-          cText(r'R$ 2.000,00', 70, 52, 19, weight: FontWeight.w800),
-          cBox(20, 78, 196, 8, radius: 4, color: AppColors.progressTrack),
-          cBox(20, 78, 147, 8, radius: 4, gradient: AppColors.mintGradient),
-          cText(
-            '75%',
-            216,
-            100,
-            11,
-            weight: FontWeight.w700,
-            color: AppColors.mint,
-            anchor: Anchor.end,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ExpenseToastCard extends StatelessWidget {
-  const ExpenseToastCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GlassCard(
-      width: 330,
-      height: 76,
-      radius: 20,
-      color: AppColors.floatingCardBackground,
-      borderColor: AppColors.floatingCardBorder,
-      borderWidth: 1.2,
-      child: Stack(
-        children: [
-          cCircle(40, 38, 20, gradient: AppColors.mintGradient),
-          cIcon(AppIcons.check, 30, 28, scale: 0.8333, color: AppColors.onMint, stroke: 3.36),
-          cText('Gasto adicionado', 70, 33, 14, weight: FontWeight.w700),
-          cText('Supermercado · Alimentação', 70, 52, 11.5, color: AppColors.textMuted),
-          cText(
-            r'- R$ 120,00',
-            312,
-            44,
-            13,
-            weight: FontWeight.w700,
-            color: AppColors.red,
-            anchor: Anchor.end,
-          ),
+          cCircle(40, 40, 20, color: AppColors.categoryFood),
+          cIcon(AppIcons.utensils, 29, 29, scale: 0.9167, color: AppColors.textPrimary, stroke: 2.2),
+          cText('Alimentação', 72, 34, 12.5, weight: FontWeight.w500, color: AppColors.textMuted),
+          cText(r'-R$ 400,50', 72, 58, 19, weight: FontWeight.w800, color: AppColors.red),
         ],
       ),
     );
@@ -142,256 +97,191 @@ class TransactionFloatCard extends StatelessWidget {
   }
 }
 
-const _sparkline =
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160">'
-    '<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1">'
-    '<stop offset="0" stop-color="#3CF2A6" stop-opacity="0.35"/>'
-    '<stop offset="1" stop-color="#3CF2A6" stop-opacity="0"/></linearGradient></defs>'
-    '<path d="M24 138 L24 126 C 60 120, 80 96, 112 104 S 170 84, 200 92 S 250 70, 276 62 L276 138 Z" fill="url(#s)"/>'
-    '<path d="M24 126 C 60 120, 80 96, 112 104 S 170 84, 200 92 S 250 70, 276 62" fill="none" stroke="#3CF2A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'
-    '</svg>';
-
-class FutureBalanceCard extends StatelessWidget {
-  const FutureBalanceCard({super.key});
+class HiddenBalanceChip extends StatelessWidget {
+  const HiddenBalanceChip({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GlassCard(
-      width: 300,
-      height: 160,
-      radius: 26,
+      width: 220,
+      height: 68,
+      radius: 22,
       color: AppColors.floatingCardBackground,
       borderColor: AppColors.chipBorder,
       borderWidth: 1.2,
       child: Stack(
         children: [
-          cCircle(44, 44, 22, color: AppColors.iconCircle),
-          cIcon(AppIcons.wallet, 32, 32, stroke: 1.9),
-          cText('Saldo futuro', 78, 40, 13.5, weight: FontWeight.w500, color: AppColors.textMuted),
-          cText(r'R$ 3.500,00', 78, 66, 24, weight: FontWeight.w800),
-          cBox(206, 14, 74, 28, radius: 14, color: AppColors.iconCircle),
-          cText(
-            '+ 15%',
-            243,
-            33.5,
-            13,
-            weight: FontWeight.w700,
-            color: AppColors.mint,
-            anchor: Anchor.middle,
-          ),
-          cSvg(0, 0, 300, 160, _sparkline),
+          cCircle(36, 34, 19, color: AppColors.chipIconBackground),
+          cIcon(AppIcons.eyeOff, 26, 24, scale: 0.8333, stroke: 2.4),
+          cText('Saldo atual', 68, 28, 11.5, weight: FontWeight.w500, color: AppColors.textMuted),
+          cText(r'R$ ••••••', 68, 50, 17, weight: FontWeight.w800),
         ],
       ),
     );
   }
 }
 
-const _reportBars = [20.0, 34.0, 28.0, 44.0, 30.0, 50.0, 38.0, 26.0, 46.0, 34.0];
+class MonthPickerCard extends StatelessWidget {
+  const MonthPickerCard({super.key});
 
-class MonthlyReportCard extends StatelessWidget {
-  const MonthlyReportCard({super.key});
+  static const _months = ['Julho 2026', 'Junho 2026', 'Maio 2026', 'Abril 2026'];
 
   @override
   Widget build(BuildContext context) {
     return GlassCard(
-      width: 240,
-      height: 124,
+      width: 220,
+      height: 196,
       color: AppColors.floatingCardBackground,
       borderColor: AppColors.floatingCardBorder,
       borderWidth: 1.2,
       child: Stack(
         children: [
-          cIcon(AppIcons.fileText, 20, 18, scale: 0.9167, stroke: 2.073),
-          cText('Relatório de setembro', 52, 35, 13, weight: FontWeight.w700),
-          for (var i = 0; i < _reportBars.length; i++)
-            cBox(
-              22 + i * 20.444,
-              104 - _reportBars[i],
-              12,
-              _reportBars[i],
-              radius: 3,
-              gradient: AppColors.bar,
+          for (final (i, month) in _months.indexed) ...[
+            if (i > 0) cBox(20, 10 + i * 44.0, 180, 1, color: AppColors.rowDivider),
+            cText(
+              month,
+              20,
+              38 + i * 44.0,
+              14,
+              weight: i == 0 ? FontWeight.w700 : FontWeight.w500,
+              color: i == 0 ? AppColors.mint : AppColors.textPrimary,
             ),
+            if (i == 0) cIcon(AppIcons.check, 180, 22, scale: 0.8333, stroke: 2.9),
+          ],
         ],
       ),
     );
   }
 }
 
-class GoalRingCard extends StatelessWidget {
-  const GoalRingCard({super.key});
+class BalanceChartCard extends StatelessWidget {
+  const BalanceChartCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GlassCard(
-      width: 320,
-      height: 360,
+      width: 400,
+      height: 330,
       radius: 30,
-      color: AppColors.detailCardBackground,
-      borderColor: AppColors.floatingCardBorder,
+      gradient: AppColors.balanceCard,
+      borderColor: AppColors.balanceCardBorder,
       borderWidth: 1.2,
       child: Stack(
         children: [
-          cIcon(AppIcons.target, 26, 30, stroke: 1.9),
-          cText('Meta do mês', 62, 50, 15, weight: FontWeight.w600, color: AppColors.textMuted),
-          const Positioned(
-            left: 54,
-            top: 82,
-            width: 212,
-            height: 212,
-            child: CustomPaint(painter: GoalRingPainter(progress: 0.75)),
+          cIcon(AppIcons.wallet, 26, 28, stroke: 1.9),
+          cText('Saldo atual', 60, 46, 15, weight: FontWeight.w600, color: AppColors.balanceLabel),
+          cBox(
+            276,
+            24,
+            100,
+            34,
+            radius: 11,
+            color: AppColors.monthSelector,
+            borderColor: AppColors.monthSelectorBorder,
           ),
-          cText(
-            '75%',
-            160,
-            202,
-            48,
-            weight: FontWeight.w800,
-            letterSpacing: -1,
-            anchor: Anchor.middle,
+          cIcon(AppIcons.calendar, 287, 32, scale: 0.75, color: AppColors.navLink, stroke: 2.53),
+          cText('Julho', 311, 46, 13, weight: FontWeight.w500),
+          cIcon(AppIcons.chevronDown, 352, 34, scale: 0.6667, color: AppColors.textMuted, stroke: 3),
+          cText(r'R$ 3.000,00', 26, 106, 34, weight: FontWeight.w800, letterSpacing: -0.5),
+          cIcon(AppIcons.eye, 262, 82, color: AppColors.navLink, stroke: 1.8),
+          cIcon(AppIcons.arrowUpRight, 26, 120, scale: 0.75, stroke: 2.9),
+          cText('+12%', 48, 135, 14, weight: FontWeight.w700, color: AppColors.mint),
+          cText('em relação ao mês anterior', 92, 135, 13, color: AppColors.balanceCaption),
+          ...monthChart(
+            left: 26,
+            width: 348,
+            baseline: 286,
+            height: 112,
+            barWidth: 8,
+            labelSize: 11,
           ),
-          cText(
-            'da meta atingida',
-            160,
-            228,
-            12.5,
-            color: AppColors.textMuted,
-            anchor: Anchor.middle,
-          ),
-          cBox(28, 308, 264, 1, color: AppColors.rowDivider),
-          cText(r'R$ 1.500', 28, 336, 15, weight: FontWeight.w700),
-          cText(r'de R$ 2.000', 98.42, 336, 13, color: AppColors.textMuted),
         ],
       ),
     );
   }
-}
-
-class GoalRingPainter extends CustomPainter {
-  const GoalRingPainter({required this.progress, this.strokeWidth = 20});
-
-  final double progress;
-  final double strokeWidth;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final radius = (size.shortestSide - strokeWidth) / 2;
-    final rect = Rect.fromCircle(center: size.center(Offset.zero), radius: radius);
-
-    canvas.drawCircle(
-      rect.center,
-      radius,
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = strokeWidth
-        ..color = AppColors.ringTrack,
-    );
-
-    const lead = 0.15;
-    final sweep = 2 * math.pi * progress;
-    final shader = SweepGradient(
-      endAngle: sweep + lead,
-      colors: const [AppColors.mint, AppColors.mint, AppColors.mintGradientEnd],
-      stops: [0, lead / (sweep + lead), 1],
-      transform: const GradientRotation(-math.pi / 2 - lead),
-    ).createShader(rect);
-
-    canvas.drawArc(
-      rect,
-      -math.pi / 2,
-      sweep,
-      false,
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = strokeWidth
-        ..strokeCap = StrokeCap.round
-        ..shader = shader,
-    );
-  }
-
-  @override
-  bool shouldRepaint(GoalRingPainter oldDelegate) =>
-      oldDelegate.progress != progress || oldDelegate.strokeWidth != strokeWidth;
 }
 
 class TransactionDetailCard extends StatelessWidget {
   const TransactionDetailCard({super.key});
 
+  static const _rows = [
+    (AppIcons.calendar, 'Data da compra', '02/07/2026'),
+    (AppIcons.clock, 'Horário', '18:42'),
+    (AppIcons.store, 'Estabelecimento', 'Restaurante Sabor'),
+    (AppIcons.receipt, 'Descrição', 'Jantar'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GlassCard(
       width: 420,
-      height: 470,
+      height: 524,
       radius: 30,
       color: AppColors.detailCardBackground,
       borderColor: AppColors.floatingCardBorder,
       borderWidth: 1.2,
       child: Stack(
         children: [
-          cCircle(210, 80, 40, color: AppColors.transactionIcon),
-          cIcon(AppIcons.shoppingCart, 192, 62, scale: 1.5, stroke: 1.2),
           cText(
-            r'R$ 120,00',
+            'Saída',
             210,
-            172,
-            46,
+            40,
+            15,
+            weight: FontWeight.w600,
+            color: AppColors.textMuted,
+            anchor: Anchor.middle,
+          ),
+          cCircle(210, 96, 36, color: AppColors.transactionIcon, borderColor: AppColors.detailPillBorder),
+          cIcon(AppIcons.utensils, 194, 80, scale: 1.3333, stroke: 1.5),
+          cText(
+            r'- R$ 32,90',
+            210,
+            182,
+            44,
             weight: FontWeight.w800,
             letterSpacing: -1,
+            color: AppColors.red,
             anchor: Anchor.middle,
           ),
           cText(
-            'Supermercado',
+            'Restaurante Sabor',
             210,
-            204,
-            18,
+            212,
+            17,
             weight: FontWeight.w500,
             color: AppColors.textMuted,
             anchor: Anchor.middle,
           ),
           cBox(
             110,
-            224,
+            228,
             200,
-            46,
-            radius: 23,
+            44,
+            radius: 22,
             color: AppColors.chipBackground,
             borderColor: AppColors.detailPillBorder,
             borderWidth: 1.2,
           ),
-          cCircle(135, 247, 15, color: AppColors.chipIconBackground),
-          cIcon(AppIcons.utensils, 127, 239, scale: 0.6667, stroke: 3),
-          cText('Alimentação', 161, 252, 14.5, weight: FontWeight.w700),
-          cIcon(AppIcons.pencil, 276, 237, scale: 0.8333, stroke: 2.4),
+          cIcon(AppIcons.utensils, 128, 240, scale: 0.8333, stroke: 2.4),
+          cText('Alimentação', 156, 255, 14.5, weight: FontWeight.w700),
+          cIcon(AppIcons.pencil, 276, 241, scale: 0.75, stroke: 2.6),
 
           cBox(
             24,
             292,
             372,
-            160,
+            214,
             radius: 22,
             color: AppColors.panelBackground,
             borderColor: AppColors.cardBorder,
           ),
           cText('Sobre a transação', 46, 326, 16, weight: FontWeight.w700),
-          cBox(46, 340, 328, 1, color: AppColors.rowDivider),
-          cIcon(AppIcons.calendar, 46, 354, scale: 0.75, stroke: 2.533),
-          cText('Data da compra', 76, 368, 13, color: AppColors.textMuted),
-          cText(
-            'Domingo, 20/09/2026',
-            374,
-            368,
-            13,
-            weight: FontWeight.w600,
-            anchor: Anchor.end,
-          ),
-          cBox(46, 384, 328, 1, color: AppColors.rowDivider),
-          cIcon(AppIcons.clock, 46, 398, scale: 0.75, stroke: 2.533),
-          cText('Horário', 76, 412, 13, color: AppColors.textMuted),
-          cText('18:42', 374, 412, 13, weight: FontWeight.w600, anchor: Anchor.end),
-          cBox(46, 428, 328, 1, color: AppColors.rowDivider),
-          cIcon(AppIcons.fileText, 46, 434, scale: 0.75, stroke: 2.533),
-          cText('Adicionar descrição', 76, 448, 13, weight: FontWeight.w600, color: AppColors.mint),
-          cIcon(AppIcons.chevronRight, 356, 433, scale: 0.75, stroke: 2.933),
+          for (final (i, (icon, label, value)) in _rows.indexed) ...[
+            cBox(46, 340 + i * 40.0, 328, 1, color: AppColors.rowDivider),
+            cIcon(icon, 46, 352 + i * 40.0, scale: 0.75, stroke: 2.533),
+            cText(label, 76, 366 + i * 40.0, 13, color: AppColors.textMuted),
+            cText(value, 374, 366 + i * 40.0, 13, weight: FontWeight.w600, anchor: Anchor.end),
+          ],
         ],
       ),
     );

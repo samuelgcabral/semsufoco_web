@@ -56,37 +56,13 @@ abstract final class AppColors {
   static const bottomNavBackground = Color(0xFF07110E);
   static const panelBackground = Color(0xFF0B1715);
 
-  static const desktopFrame = Color(0xFF07100E);
-  static const desktopFrameBorder = Color(0xFF24574A);
-  static const browserBar = Color(0xFF0A1512);
-  static const browserDivider = Color(0xFF143229);
-  static const urlBar = Color(0xFF0E1F1B);
-  static const trafficRed = Color(0xD9FF5F57);
-  static const trafficYellow = Color(0xD9FEBC2E);
-  static const trafficGreen = Color(0xD928C840);
-  static const sidebar = Color(0xFF050B09);
-  static const sidebarDivider = Color(0xFF12302A);
-  static const sidebarActive = Color(0xFF0E5C47);
   static const monthSelector = Color(0xFF06120F);
   static const monthSelectorBorder = Color(0xFF2A6A58);
   static const chartGrid = Color(0x592A7A66);
 
-  static const backButton = Color(0xFF101514);
-  static const fieldBorder = Color(0xFF1B2522);
-  static const fieldLabel = Color(0xFF6F837D);
-  static const fieldBackground = Color(0xFF0E1312);
-  static const dateIconBackground = Color(0xFF123229);
-  static const categoryLabel = Color(0xFFAAB8B3);
-
-  static const saudeBackground = Color(0xFF0E3328);
-  static const saude = Color(0xFF1ED9A6);
-  static const moradiaBackground = Color(0xFF15233F);
-  static const moradia = Color(0xFF5B8CFF);
-  static const transporteBackground = Color(0xFF38300F);
-  static const transporte = Color(0xFFF2C230);
-  static const alimentacaoBackground = Color(0xFF2B2048);
-  static const alimentacao = Color(0xFFA87BFF);
-  static const alimentacaoSelected = Color(0xFF14102A);
+  static const categoryFood = Color(0xFFFFA726);
+  static const categoryHousing = Color(0xFF42A5F5);
+  static const categoryTransport = Color(0xFFFFCA28);
 
   static const redCardBorder = Color(0xFF4A2024);
   static const redIconBackground = Color(0xFF3A171A);

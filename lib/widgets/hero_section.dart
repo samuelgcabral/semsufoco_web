@@ -163,8 +163,8 @@ class _HeroCopy extends StatelessWidget {
         SizedBox(height: wide ? 29.3 : 20),
         Text(
           joinLines(const [
-            'Registre gastos em segundos, acompanhe seu saldo e conquiste',
-            'suas metas. Tudo num só lugar, direto no navegador.',
+            'Registre gastos em segundos, organize por categoria e',
+            'acompanhe seu saldo mês a mês, direto no navegador.',
           ], wide: wide),
           style: AppText.style(
             wide ? 20 : 17,
@@ -256,7 +256,7 @@ class HeroVisual extends StatelessWidget {
             child: FloatingCard(
               degrees: -4,
               parallax: 40,
-              child: GoalMiniCard(),
+              child: CategoryMiniCard(),
             ),
           ),
           Positioned(
@@ -265,7 +265,13 @@ class HeroVisual extends StatelessWidget {
             child: FloatingCard(
               degrees: 4,
               parallax: -30,
-              child: ExpenseToastCard(),
+              child: TransactionFloatCard(
+                icon: AppIcons.utensils,
+                title: 'Pizzaria Bella',
+                category: 'Alimentação',
+                amount: r'- R$ 58,00',
+                income: false,
+              ),
             ),
           ),
           Positioned(

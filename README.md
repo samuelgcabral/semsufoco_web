@@ -7,7 +7,7 @@
 ![Dart](https://img.shields.io/badge/Dart-3.12-0175C2?logo=dart&logoColor=white)
 ![Platform](https://img.shields.io/badge/platform-web-3CF2A6)
 
-A single-page, fully responsive landing page. The phone and desktop app mockups are drawn with Flutter widgets rather than images, so they stay sharp at any size. All page copy is in Brazilian Portuguese.
+A single-page, fully responsive landing page. The app screenshots are recreations of the real SemSufoco app screens, drawn with Flutter widgets rather than images, so they stay sharp at any size. All page copy is in Brazilian Portuguese.
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ A single-page, fully responsive landing page. The phone and desktop app mockups 
   - Desktop (≥ 1100px)
   - Tablet (700–1099px)
   - Mobile (< 700px)
-- **Widget-built mockups:** phone and browser-window screens, finance cards and a goal ring drawn with `CustomPaint`.
+- **Widget-built mockups:** the app's real screens (Home, Novo lançamento, Categorias and the category statement) and cards from those screens.
 - **Scroll animations:**
   - Visuals fade and zoom in as they enter the viewport.
   - Floating cards drift with a smoothed parallax effect.
@@ -133,9 +133,8 @@ lib/
     │   ├── section_container.dart  # Responsive breakpoints and layout containers
     │   └── section_heading.dart
     └── mockups/
-        ├── phone_mockup.dart
-        ├── desktop_mockup.dart
-        └── finance_cards.dart
+        ├── phone_mockup.dart     # Phone frame and the app screens
+        └── finance_cards.dart    # Floating cards taken from app screens
 test/
 ├── widget_test.dart              # Overflow tests across viewport widths
 └── fonts/                        # Inter font files used only by tests

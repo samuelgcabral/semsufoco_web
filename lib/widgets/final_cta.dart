@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:semsufoco/theme/app_colors.dart';
 import 'package:semsufoco/theme/app_theme.dart';
+import 'package:semsufoco/widgets/common/app_icons.dart';
 import 'package:semsufoco/widgets/common/buttons.dart';
 import 'package:semsufoco/widgets/common/canvas.dart';
 import 'package:semsufoco/widgets/common/cards.dart';
@@ -75,7 +76,7 @@ class FinalCta extends StatelessWidget {
                           const FloatingCard(
                             degrees: -4,
                             parallax: 30,
-                            child: GoalMiniCard(),
+                            child: CategoryMiniCard(),
                           ),
                         ),
                         cAt(
@@ -84,7 +85,13 @@ class FinalCta extends StatelessWidget {
                           const FloatingCard(
                             degrees: 3,
                             parallax: -30,
-                            child: ExpenseToastCard(),
+                            child: TransactionFloatCard(
+                              icon: AppIcons.wallet,
+                              title: 'Salário',
+                              category: 'Salário',
+                              amount: r'+ R$ 2.350,00',
+                              income: true,
+                            ),
                           ),
                         ),
                       ],
