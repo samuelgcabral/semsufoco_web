@@ -24,7 +24,7 @@ A single-page, fully responsive landing page. The app screenshots are recreation
 
 ## Features
 
-- **Pixel-faithful design:** the desktop layout reproduces the original 1440px design file, coordinate for coordinate.
+- **Design-faithful layout:** the desktop layout follows the original 1440px design file, with the app mockups updated to match the real app.
 - **Responsive:** three breakpoints, with mockups scaling down instead of overflowing.
   - Desktop (≥ 1100px)
   - Tablet (700–1099px)
@@ -37,7 +37,7 @@ A single-page, fully responsive landing page. The app screenshots are recreation
 - **Sticky navigation:** nav links scroll smoothly to their sections.
 - **FAQ accordion:** animated expand and collapse.
 - **Hover states:** buttons and links react to the pointer.
-- **Lucide icons:** rendered from SVG path data with `flutter_svg`.
+- **Icons:** Lucide icon paths (plus a few custom ones, such as Pix) rendered with `flutter_svg`.
 
 ### Page sections
 
@@ -145,10 +145,11 @@ test/
 - **Design tokens:** every color and gradient lives in `AppColors`, so widgets never hardcode colors.
 - **Responsive layout:**
   - `SectionContainer.builder` passes each section its `ScreenSize` and available width. It uses `LayoutBuilder` instead of `MediaQuery`, so a section responds to the space it actually gets.
-  - On desktop, sections are fixed 1200px compositions (`DesignFrame`). These scale down proportionally between 1100 and 1280px.
+  - On desktop, the visual-heavy sections (hero, showcase, feature blocks and final call to action) are fixed 1200px compositions (`DesignFrame`). These scale down proportionally between 1100 and 1280px.
   - On tablet and mobile, sections stack vertically, and mockups shrink with `ScaledBox` (a `FittedBox`).
 - **Design-coordinate helpers:** functions like `cText` and `cBox` in `canvas.dart` place elements using the design file's own coordinates. For text, the y coordinate is the baseline, matching SVG `<text>` elements.
 - **Typography:** `AppText` builds Inter styles with an explicit line height, so text can be positioned precisely by its baseline.
+- **App mockups:** the phone screens and floating cards recreate screens that exist in the SemSufoco app (Home, Novo lançamento, Categorias, the category statement and transaction details), using its example data. When the app changes, update `phone_mockup.dart` and `finance_cards.dart` so the page never shows features the app doesn't have.
 
 ## Testing
 
