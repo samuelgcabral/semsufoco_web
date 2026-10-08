@@ -8,6 +8,7 @@
 ![Platform](https://img.shields.io/badge/platform-web-3CF2A6)
 
 A single-page, fully responsive landing page. The app screenshots are recreations of the real SemSufoco app screens, drawn with Flutter widgets rather than images, so they stay sharp at any size. All page copy is in Brazilian Portuguese.
+<img width="1919" height="845" alt="Captura de tela 2026-10-08 203541" src="https://github.com/user-attachments/assets/b8ae544b-0a0d-4d8c-a5b6-b7478c34dd83" />
 
 ## Table of Contents
 
