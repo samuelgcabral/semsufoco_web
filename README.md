@@ -166,19 +166,17 @@ The default test font draws every letter as a square, which is much wider than I
 
 ## Deployment
 
-Build the static bundle:
+GitHub Pages deployment is automated by `.github/workflows/deploy.yml` whenever changes are pushed to `main`. You can also start the workflow manually from the Actions tab. It installs Flutter 3.44.0, runs the test suite, builds the web app with the `/semsufoco_web/` base href, and deploys the result to GitHub Pages.
 
-```bash
-flutter build web --release
-```
+Before the first deployment, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
 
-Then serve the `build/web` folder from any static host, such as Firebase Hosting, GitHub Pages, Vercel or Netlify.
-
-If the site is served from a subpath (for example, on GitHub Pages), set the base href:
+To build the static bundle locally:
 
 ```bash
 flutter build web --release --base-href /semsufoco_web/
 ```
+
+The output is in `build/web`.
 
 ## Contributing
 
